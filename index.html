@@ -23,13 +23,21 @@
     </nav>
   </header>
 
-  <!-- Hero photo grid -->
-  <div class="photo-grid">
-    <img src="images/627f4420-2afb-40e1-9a27-29f41ceb9408.jpg" alt="Andre and Helen">
-    <img src="images/e00815ac-1466-48b2-abc8-74300ee97a03.jpg" alt="Andre and Helen">
-    <img src="images/122d2a59-a929-44ab-a86c-39df44284abd.jpg" alt="Andre and Helen">
-    <img src="images/9c544924-ed87-402e-b65a-654437cdd23f.jpg" alt="Andre and Helen">
-    <img src="images/e6138649-38e7-4d07-bdeb-e9d8df5937cd.jpg" alt="Andre and Helen">
+  <!-- Hero photo strip — duplicated for seamless infinite scroll -->
+  <div class="strip-wrapper">
+    <div class="strip">
+      <img src="images/627f4420-2afb-40e1-9a27-29f41ceb9408.jpg" alt="Andre and Helen">
+      <img src="images/122d2a59-a929-44ab-a86c-39df44284abd.jpg" alt="Andre and Helen">
+      <img src="images/e00815ac-1466-48b2-abc8-74300ee97a03.jpg" alt="Andre and Helen">
+      <img src="images/9c544924-ed87-402e-b65a-654437cdd23f.jpg" alt="Andre and Helen">
+      <img src="images/e6138649-38e7-4d07-bdeb-e9d8df5937cd.jpg" alt="Andre and Helen">
+      <!-- duplicate set for seamless loop -->
+      <img src="images/627f4420-2afb-40e1-9a27-29f41ceb9408.jpg" alt="" aria-hidden="true">
+      <img src="images/122d2a59-a929-44ab-a86c-39df44284abd.jpg" alt="" aria-hidden="true">
+      <img src="images/e00815ac-1466-48b2-abc8-74300ee97a03.jpg" alt="" aria-hidden="true">
+      <img src="images/9c544924-ed87-402e-b65a-654437cdd23f.jpg" alt="" aria-hidden="true">
+      <img src="images/e6138649-38e7-4d07-bdeb-e9d8df5937cd.jpg" alt="" aria-hidden="true">
+    </div>
   </div>
 
   <!-- Floral divider -->

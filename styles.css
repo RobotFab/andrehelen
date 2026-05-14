@@ -80,20 +80,39 @@ nav a.active {
   text-align: center;
 }
 
-/* ── Home — photo grid ──────────────────────────────────── */
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
-  margin: 0 auto 0;
-  max-width: 960px;
+/* ── Home — infinite scrolling photo strip ──────────────── */
+.strip-wrapper {
+  width: 100%;
+  overflow: hidden;
 }
 
-.photo-grid img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
+.strip {
+  display: flex;
+  /* translateX(-50%) shifts by half the total width = one full image set */
+  animation: photo-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.strip img {
+  height: 400px;
+  width: auto;
+  flex-shrink: 0;
   display: block;
+  object-fit: cover;
+}
+
+@keyframes photo-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Pause on hover, matching Zola's feel */
+.strip-wrapper:hover .strip {
+  animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .strip img { height: 240px; }
 }
 
 /* ── Home — couple names section ────────────────────────── */
@@ -388,12 +407,6 @@ footer {
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 640px) {
   nav { gap: 16px; }
-  .photo-grid { grid-template-columns: repeat(2, 1fr); }
-  .photo-grid img { height: 180px; }
   .event-actions { flex-direction: column; align-items: center; }
   .accommodation-block .btn-row { flex-direction: column; align-items: center; }
-}
-
-@media (max-width: 400px) {
-  .photo-grid { grid-template-columns: 1fr 1fr; }
 }
