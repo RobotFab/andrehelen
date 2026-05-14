@@ -84,8 +84,9 @@ nav a.active {
 
 .strip {
   display: flex;
+  width: max-content;
   /* translateX(-50%) shifts by half the total width = one full image set */
-  animation: photo-scroll 21s linear infinite;
+  animation: photo-scroll 16s linear infinite;
   will-change: transform;
 }
 
