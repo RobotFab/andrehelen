@@ -22,10 +22,6 @@ header {
   background: #fff;
   text-align: center;
   padding: 32px 24px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .site-title {
@@ -94,7 +90,7 @@ nav a.active {
 }
 
 .strip img {
-  height: 400px;
+  height: 600px;
   width: auto;
   flex-shrink: 0;
   display: block;
@@ -112,7 +108,7 @@ nav a.active {
 }
 
 @media (max-width: 640px) {
-  .strip img { height: 240px; }
+  .strip img { height: 360px; }
 }
 
 /* ── Home — couple names section ────────────────────────── */
