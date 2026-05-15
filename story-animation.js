@@ -304,57 +304,15 @@
     drawBalloon(balloon.x - sx, balloon.y - sy);
   }
 
-  // ── Heart-shaped red balloon ───────────────────────────────────────────
+  // ── Drag hint text ────────────────────────────────────────────────────
   function drawBalloon(cx, cy) {
-    const r = 23;
     ctx.save();
-
-    // Heart — tip pointing down
-    ctx.beginPath();
-    ctx.moveTo(cx, cy + r * 1.15);
-    ctx.bezierCurveTo(
-      cx - r * 1.75, cy + r * 0.30,
-      cx - r * 1.75, cy - r * 0.88,
-      cx,            cy - r * 0.15
-    );
-    ctx.bezierCurveTo(
-      cx + r * 1.75, cy - r * 0.88,
-      cx + r * 1.75, cy + r * 0.30,
-      cx,            cy + r * 1.15
-    );
-    ctx.fillStyle   = '#e63946';
-    ctx.fill();
-    ctx.strokeStyle = '#c1121f';
-    ctx.lineWidth   = 1.5;
-    ctx.stroke();
-
-    // Gleam
-    ctx.beginPath();
-    ctx.ellipse(cx - r * 0.47, cy - r * 0.22, r * 0.27, r * 0.16, -0.4, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(255,255,255,0.38)';
-    ctx.fill();
-
-    // Label
-    ctx.fillStyle    = '#fff';
-    ctx.font         = 'bold 10px helvetica, arial, sans-serif';
+    ctx.font         = 'bold 11px helvetica, arial, sans-serif';
+    ctx.fillStyle    = 'rgba(200, 20, 30, 0.23)';
     ctx.textAlign    = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText('drag me', cx, cy + r * 0.33);
-
-    // Knot
-    ctx.beginPath();
-    ctx.arc(cx, cy + r * 1.15, 2.5, 0, Math.PI * 2);
-    ctx.fillStyle = '#c1121f';
-    ctx.fill();
-
-    // Short string from knot to chain
-    ctx.strokeStyle = 'rgba(80,80,80,0.35)';
-    ctx.lineWidth   = 1;
-    ctx.beginPath();
-    ctx.moveTo(cx, cy + r * 1.15 + 2.5);
-    ctx.quadraticCurveTo(cx + 5, cy + r * 1.15 + 9, cx + 1, cy + r * 1.15 + 18);
-    ctx.stroke();
-
+    ctx.fillText('drag', cx, cy - 7);
+    ctx.fillText('me',   cx, cy + 7);
     ctx.restore();
   }
 
